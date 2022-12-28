@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok_clone/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,44 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          textTheme: Theme.of(context)
+              .textTheme
+              .apply(bodyColor: Colors.white, displayColor: Colors.white)),
       home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: 100,
-            padding: const EdgeInsets.only(bottom: 15.0),
-            color: Colors.yellow[300],
-          ),
-          Expanded(
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Expanded(
-                  child: Container(color: Colors.green[300]),
-                ),
-                Container(
-                  color: Colors.red[300],
-                  width: 100.0,
-                )
-              ],
-            ),
-          ),
-          Container(height: 80.0, color: Colors.blue[300]),
-        ],
-      ),
     );
   }
 }
